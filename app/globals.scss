@@ -27,7 +27,7 @@ body {
   align-items: center;
 
   .brand {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
@@ -37,12 +37,12 @@ body {
     }
   }
 
-  nav {
-    div {
+  .navmenu {
+    .navlinks {
       display: flex;
       align-items: center;
 
-      a {
+      .navlink {
         color: #ffffff;
         text-decoration: none;
         padding: 0.5rem 1rem;
@@ -61,14 +61,76 @@ body {
   }
 }
 
+.todo-container {
+  @extend %container;
+  padding: 4rem;
+
+  border-bottom: 1px dashed variable.$primary-color;
+  width: 90%;
+  background-color: variable.$text-color;
+  margin-top: 4rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.todo-fields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-field {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  color: #f9f9f9;
+  font-weight: 400;
+}
+
+.input-button {
+  padding: 1rem 4rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: variable.$primary-color;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.todolist-container {
+  @extend %container;
+  padding: 4rem;
+  height: auto;
+  color: #ffffff;
+  width: 90%;
+  background-color: variable.$text-color;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.todo-item {
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  color: black;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Footer Styles */
 .footer {
   background-color: variable.$primary-color;
   color: #ffffff;
   padding: 1rem;
   text-align: center;
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+  font-size: 1.3rem;
 }

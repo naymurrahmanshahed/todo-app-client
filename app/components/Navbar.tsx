@@ -6,10 +6,14 @@ const Navbar = () => {
       <Link href={"/"} className="brand">
         TODO APP
       </Link>
-      <nav>
-        <div>
-          <Link href={"/login"}>login</Link>
-          <Link href={"/signup"}>signup</Link>
+      <nav className="navmenu">
+        <div className="navlinks">
+          <Link className="navlink" href={"/login"}>
+            login
+          </Link>
+          <Link className="navlink" href={"/signup"}>
+            signup
+          </Link>
         </div>
       </nav>
     </div>
