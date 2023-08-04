@@ -12,6 +12,11 @@ body {
   margin: 0 auto;
 }
 
+%item-btn {
+  border: none;
+  font-size: 1.5rem;
+}
+
 .min-h-screen {
   min-height: variable.$min-height;
 }
@@ -111,6 +116,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   border-radius: 0rem 0rem 1rem 1rem;
+  margin-bottom: 5rem;
 }
 
 .todo-item {
@@ -132,6 +138,21 @@ body {
     font-size: 2rem;
     font-weight: 500;
     text-transform: capitalize;
+  }
+  .task-item-right {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    .edit-btn {
+      @extend %item-btn;
+      color: variable.$primary-color;
+    }
+    .delete-btn {
+      @extend %item-btn;
+      color: rgb(161, 5, 5);
+    }
   }
 }
 

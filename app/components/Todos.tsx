@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import {
-  useCreateTodoMutation,
-  useGetAllTodoQuery,
-} from "../store/features/todoApi";
+import { useCreateTodoMutation } from "../store/features/todoApi";
 
 const Todos = () => {
-  // const { data } = useGetAllTodoQuery({});
-
-  // console.log(data);
   const [title, setTitle] = useState("");
   const [createTodo, response] = useCreateTodoMutation({});
 

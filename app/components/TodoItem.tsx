@@ -1,15 +1,19 @@
 "use client";
 import moment from "moment";
 import { FiEdit, FiTrash } from "react-icons/fi";
+import { useDeleteTodoMutation } from "../store/features/todoApi";
 
 interface todoStateProps {
   todo: {
+    _id: number;
     title: string;
     createdAt: string;
   };
 }
 
 const TodoItem: React.FC<todoStateProps> = ({ todo }) => {
+  const [deleteTodo, response] = useDeleteTodoMutation();
+  console.log(response);
   return (
     <div className="todo-item ">
       <div className="todo-item-left">
@@ -19,10 +23,10 @@ const TodoItem: React.FC<todoStateProps> = ({ todo }) => {
         <p className="title">{todo.title}</p>
       </div>
       <div className="task-item-right">
-        <button>
+        <button className="edit-btn">
           <FiEdit />
         </button>
-        <button>
+        <button onClick={() => deleteTodo(todo._id)} className="delete-btn">
           <FiTrash />
         </button>
       </div>
