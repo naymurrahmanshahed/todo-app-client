@@ -1,8 +1,29 @@
+"use client";
+
+import { useState } from "react";
+import {
+  useCreateTodoMutation,
+  useGetAllTodoQuery,
+} from "../store/features/todoApi";
+
 const Todos = () => {
+  // const { data } = useGetAllTodoQuery({});
+
+  // console.log(data);
+  const [title, setTitle] = useState("");
+  const [createTodo, response] = useCreateTodoMutation({});
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    createTodo({ title });
+    setTitle("");
+  };
   return (
     <section className="todo-container">
-      <form className="todo-fields">
+      <form onSubmit={handleSubmit} className="todo-fields">
         <input
+          onChange={(e) => setTitle(e.target.value)}
+          value={title}
           className="input-field"
           type="text"
           placeholder="What things to do"

@@ -1,9 +1,22 @@
+"use client";
+import moment from "moment";
 import { FiEdit, FiTrash } from "react-icons/fi";
-const TodoItem = () => {
+
+interface todoStateProps {
+  todo: {
+    title: string;
+    createdAt: string;
+  };
+}
+
+const TodoItem: React.FC<todoStateProps> = ({ todo }) => {
   return (
     <div className="todo-item ">
       <div className="todo-item-left">
-        <p>Todo 1</p>
+        <span className="time">
+          {moment(todo.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
+        </span>
+        <p className="title">{todo.title}</p>
       </div>
       <div className="task-item-right">
         <button>
