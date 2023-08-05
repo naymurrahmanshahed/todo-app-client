@@ -7,14 +7,14 @@ const Navbar = () => {
         TODO APP
       </Link>
       <nav className="navmenu">
-        <div className="navlinks">
+        {/* <div className="navlinks">
           <Link className="navlink" href={"/login"}>
             login
           </Link>
           <Link className="navlink" href={"/signup"}>
             signup
           </Link>
-        </div>
+        </div> */}
       </nav>
     </div>
   );

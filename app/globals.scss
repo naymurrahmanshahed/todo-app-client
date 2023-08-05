@@ -77,6 +77,10 @@ body {
   border-radius: 1rem 1rem 0 0;
 }
 
+.loading {
+  text-align: center;
+}
+
 .todo-fields {
   display: flex;
   justify-content: space-between;
@@ -161,6 +165,47 @@ body {
     .delete-btn {
       @extend %item-btn;
       color: rgb(161, 5, 5);
+    }
+  }
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-bottom: 20px;
+    color: variable.$primary-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button {
+    background-color: variable.$primary-color;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(variable.$primary-color, 10%);
     }
   }
 }

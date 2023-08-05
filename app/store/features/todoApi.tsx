@@ -32,16 +32,23 @@ export const todoApi = createApi({
       invalidatesTags: ["todo"],
     }),
     updateTodo: builder.mutation({
-      query: (body) => ({
-        url: `api/todos/${body._id}`,
+      query: (id) => ({
+        url: `api/todos/${id}`,
         method: "PATCH",
-        body,
       }),
       invalidatesTags: ["todo"],
     }),
     createUser: builder.mutation({
       query: (data) => ({
         url: "api/user/signup",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["user"],
+    }),
+    loginUser: builder.mutation({
+      query: (data) => ({
+        url: "api/user/login",
         method: "POST",
         body: data,
       }),
@@ -56,4 +63,5 @@ export const {
   useDeleteTodoMutation,
   useUpdateTodoMutation,
   useCreateUserMutation,
+  useLoginUserMutation,
 } = todoApi;

@@ -2,13 +2,18 @@
 import TodoItem from "./TodoItem";
 import { useGetAllTodoQuery } from "../store/features/todoApi";
 const TodoList = () => {
-  const { data } = useGetAllTodoQuery({});
-  console.log(data);
+  const { data, isLoading } = useGetAllTodoQuery({});
+
   return (
     <section className="todolist-container">
-      {data?.map((todo: any, key: any) => (
-        <TodoItem key={todo._id} todo={todo} />
-      ))}
+      {isLoading && <span className="loading">Loading</span>}
+      {!isLoading && (
+        <>
+          {data?.map((todo: any, key: any) => (
+            <TodoItem key={todo._id} todo={todo} />
+          ))}
+        </>
+      )}
     </section>
   );
 };
