@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { todoApi } from "./features/todoApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 

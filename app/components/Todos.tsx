@@ -6,7 +6,7 @@ import { useCreateTodoMutation } from "../store/features/todoApi";
 const Todos = () => {
   const [title, setTitle] = useState("");
   const [createTodo, response] = useCreateTodoMutation({});
-
+  console.log(response);
   const handleSubmit = (e: any) => {
     e.preventDefault();
     createTodo({ title });
