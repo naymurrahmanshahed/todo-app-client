@@ -6,7 +6,7 @@ export const todoApi = createApi({
   reducerPath: "todoApi",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.API_KEY,
+    baseUrl: process.env.NEXT_PUBLIC_URL,
   }),
 
   tagTypes: ["todo", "user"],
