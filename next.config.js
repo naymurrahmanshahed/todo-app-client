@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_KEY: "http://localhost:4000/",
+    API_KEY: "https://todo-app-server-wvkf.onrender.com/",
   },
 };
 
